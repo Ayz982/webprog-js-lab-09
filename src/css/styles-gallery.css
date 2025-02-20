@@ -1,0 +1,113 @@
+/* Загальні стилі */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Контейнер галереї */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    list-style: none;
+    padding: 50px 0 0;
+    max-width: 75vw;
+    margin: auto;
+}
+
+/* Картка зображення */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Посилання */
+.gallery-link {
+    display: block;
+    text-decoration: none;
+}
+
+/* Зображення */
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Стилі для кнопки "Back to Home" */
+button.btn-back {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+button.btn-back:hover {
+    background-color: #646cff;
+}
+
+/* Фон модального вікна */
+.sl-overlay {
+    background: rgba(46, 47, 66) !important;
+    opacity: 1 !important;
+}
+
+/* Кнопка закриття */
+.sl-close {
+    color: white !important;
+}
+
+/* Стрілки */
+.sl-prev,
+.sl-next {
+    color: white !important;
+}
+
+/* Тексту з номером */
+.sl-counter {
+    color: #ffffff !important;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 50px;
+    }
+
+    button.btn-back {
+        top: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
